@@ -1,10 +1,13 @@
 const express = require('express');
+const helmet = require('helmet');
 const { handleSyntaxError, handleValidationError, handleGenericError } = require('./middlewares/errorHandlers');
 require('dotenv').config();
 const authLimiter = require('./middlewares/rateLimit');
 const app = express();
 const indexRoutes = require('./routes/index');
 const authRoutes = require('./routes/authRoutes'); 
+
+app.use(helmet());
 
 app.use(express.json());
 
