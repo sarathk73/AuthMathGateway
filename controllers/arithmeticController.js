@@ -1,33 +1,42 @@
-// Define the functions for arithmetic operations
-exports.add = (req, res) => {
-    const { number1, number2 } = req.body;
+const { arithmeticOperationSchema } = require('../validations/validationSchemas');
+
+const validateArithmeticOperation = (req, res, next) => {
+  const { error } = arithmeticOperationSchema.validate(req.body);
+  if (error) {
+    return res.status(400).json({ error: error.details[0].message });
+  }
+  next();
+};
+
+exports.add = [validateArithmeticOperation, (req, res) => {
+  const { number1, number2 } = req.body;
     if (isNaN(number1) || isNaN(number2)) {
       return res.status(400).send({ error: 'Invalid input numbers' });
     }
     const result = number1 + number2;
     res.json({ result  });
-  };
-  
-  exports.subtract = (req, res) => {
-    const { number1, number2 } = req.body;
+}];
+
+exports.subtract = [validateArithmeticOperation, (req, res) => {
+  const { number1, number2 } = req.body;
     if (isNaN(number1) || isNaN(number2)) {
       return res.status(400).send({ error: 'Invalid input numbers' });
     }
     const result = number1 - number2;
     res.json({ result });
-  };
-  
-  exports.multiply = (req, res) => {
-    const { number1, number2 } = req.body;
+}];
+
+exports.multiply = [validateArithmeticOperation, (req, res) => {
+  const { number1, number2 } = req.body;
     if (isNaN(number1) || isNaN(number2)) {
       return res.status(400).send({ error: 'Invalid input numbers' });
     }
     const result = number1 * number2;
     res.json({ result });
-  };
-  
-  exports.divide = (req, res) => {
-    const { number1, number2 } = req.body;
+}];
+
+exports.divide = [validateArithmeticOperation, (req, res) => {
+  const { number1, number2 } = req.body;
     if (isNaN(number1) || isNaN(number2)) {
       return res.status(400).send({ error: 'Invalid input numbers' });
     }
@@ -37,4 +46,4 @@ exports.add = (req, res) => {
       const result = number1 / number2;
       res.json({ result });
     }
-  };
+}];
