@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const cors = require('cors');
 const { handleSyntaxError, handleValidationError, handleGenericError } = require('./middlewares/errorHandlers');
 require('dotenv').config();
 const authLimiter = require('./middlewares/rateLimit');
@@ -19,6 +20,8 @@ app.use(handleValidationError);
 app.use(handleGenericError);
 
 app.use(morgan('combined'));
+
+app.use(cors()); //set options not now
 
 app.use('/api/auth', authLimiter);
 
