@@ -1,6 +1,7 @@
 const express = require('express');
 const { handleSyntaxError, handleValidationError, handleGenericError } = require('./middlewares/errorHandlers');
 require('dotenv').config();
+const authLimiter = require('./middlewares/rateLimit');
 const app = express();
 const indexRoutes = require('./routes/index');
 const authRoutes = require('./routes/authRoutes'); 
@@ -13,6 +14,7 @@ app.use(handleValidationError);
 
 app.use(handleGenericError);
 
+app.use('/api/auth', authLimiter);
 
 app.use('/api', indexRoutes);
 app.use('/api/auth', authRoutes); 
