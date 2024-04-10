@@ -7,9 +7,19 @@
 
 ## Features
 
-- **JWT Authentication**: Implements a robust authentication system using JSON Web Tokens.
-- **Arithmetic Operations API**: Provides endpoints for addition, subtraction, multiplication, and division.
-- **Secure Access**: Uses JWT tokens to protect all arithmetic operation endpoints, ensuring that only authenticated users can access these services.
+- **JWT Authentication**: Implements a robust authentication system using JSON Web Tokens to secure API endpoints.
+- **Arithmetic Operations API**: Offers interfaces for executing basic arithmetic operations such as addition, subtraction, multiplication, and division.
+- **Secure Access**: Employs JWT tokens to safeguard arithmetic operation endpoints, assuring access only to authenticated users.
+- **Advanced Error Handling**: Features tailored error handlers for syntax, validation, and other errors for better user experience and easier troubleshooting.
+- **API Rate Limiting**: Utilizes middleware to prevent abuse of the API by enforcing rate limits on client requests.
+- **CORS Ready**: Configures Cross-Origin Resource Sharing to allow for flexible API integration in different web environments.
+- **Request Logging**: Includes the use of Morgan for logging HTTP requests, facilitating enhanced monitoring and debugging.
+- **Enhanced Security Measures**: Implements security best practices using Helmet to manage various HTTP headers.
+- **Configurable Environment**: Manages application settings with environmental variables for better deployment management.
+- **Clean Routing Logic**: Provides a clear and manageable routing structure for handling API requests.
+- **Welcome Endpoint**: A straightforward root endpoint to confirm API operability and warmly welcome users.
+- **Flexible Server Port**: Supports easy server port adjustments through environmental variables or a default value.
+- **Swagger API Documentation**: Interactive, auto-generated documentation that illustrates API usage and allows for quick testing of endpoints.
 
 ## Folder Structure
 
