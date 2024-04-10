@@ -99,8 +99,7 @@ The server will start on port 3001 or the next available port.
   `POST /api/arithmetic/divide` - Divides two numbers.
 
 ### Authentication
-- `POST /api/auth/register` - Register a new user.
-- `POST /api/auth/login` - Login a user and receive a token.
+- `POST /api/auth/authenticate` - Login a user and receive a token.
 
 ## Postman
 
