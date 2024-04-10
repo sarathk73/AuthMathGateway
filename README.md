@@ -85,18 +85,18 @@ Install the necessary node modules:
 ### Configuration
 
 Configure your environment variables appropriately:
+1.Create a .env file in the root directory and add the following:
 ```plain
-Create a .env file in the root directory and add the following:
 
 ACCESS_TOKEN_SECRET==your-secret
 
 PORT=3001
 ```
-Start the server:
+2.Start the server:
 ```
 npm start or node server.js
 ```
-The server will start on port 3001 or the next available port.
+3.The server will start on port 3001 or the next available port.
 
 ### Arithmetic Operations
 - **Addition**
