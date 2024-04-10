@@ -2,7 +2,7 @@
 
 <b>AuthMathGateway is a Node.js-based API that provides a secured platform for performing basic arithmetic operations. This secure API leverages JWT (JSON Web Tokens) to ensure that all operations are performed only after successful user authentication.</b>
 
-![Swagger UI](/images/task2_1.png)
+![Swagger UI](/images/task1.png)
 
 
 ## Features
